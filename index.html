@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mama & Baby Essentials | 0-3 Years</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --bg-primary: #faf7f2;
+            --bg-secondary: #fff;
+            --accent: #a8d5ba;
+            --accent-dark: #88c9a1;
+            --text: #5a5a5a;
+            --text-light: #888;
+            --border: #e8e8e8;
+            --shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-secondary);
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-dark);
+        }
+
+        .logo span {
+            color: var(--text);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-dark);
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            background-color: var(--bg-primary);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent-dark);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .btn {
+            background: white;
+            color: var(--accent-dark);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Categories */
+        .categories {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text);
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-dark);
+        }
+
+        .category-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Products */
+        .products {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent);
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--accent-dark);
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .add-to-cart:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .add-to-cart:active {
+            transform: translateY(0);
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background: var(--bg-secondary);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-header h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-cart:hover {
+            background-color: var(--bg-primary);
+        }
+
+        .cart-items {
+            flex: 1;
+            margin-bottom: 2rem;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            align-items: center;
+        }
+
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+
+        .cart-item-price {
+            color: var(--accent-dark);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .cart-item-quantity {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .remove-item:hover {
+            color: #e74c3c;
+            background-color: var(--bg-primary);
+        }
+
+        .cart-total {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--border);
+            color: var(--text);
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: var(--accent-dark);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .checkout-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .checkout-btn:disabled {
+            background: var(--text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: var(--text-light);
+            padding: 2rem;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .categories, .products {
+                padding: 2rem 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-dark);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1001;
+            animation: slideIn 0.3s ease;
+            max-width: 300px;
+            font-weight: 500;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Loading state */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* UK specific styles */
+        .uk-badge {
+            background: #005ea5;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Mama & <span>Baby</span></div>
+            <ul class="nav-links">
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Everything You Need for Your Baby 0-3 Years</h1>
+            <p>Essential products selected for UK mothers. Calm design that's easy to use when you're tired.</p>
+            <button class="btn" onclick="scrollToProducts()">View Products</button>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categories" class="categories">
+        <div class="section-title">
+            <h2>Find What You Need</h2>
+            <p>Curated categories for first-time mothers in the UK</p>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card" onclick="filterProducts('sleep')">
+                <div class="category-icon">🛏️</div>
+                <h3>Sleep Solutions</h3>
+            </div>
+            <div class="category-card" onclick="filterProducts('feeding')">
+                <div class="category-icon">🍼</div>
+                <h3>Feeding</h3>
+            </div>
+            <div class="category-card" onclick="filterProducts('technology')">
+                <div class="category-icon">📱</div>
+                <h3>Baby Tech</h3>
+            </div>
+            <div class="category-card" onclick="filterProducts('organisation')">
+                <div class="category-icon">📋</div>
+                <h3>Organisation</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="products">
+        <div class="section-title">
+            <h2>Featured Products</h2>
+            <p>Carefully selected essentials for UK mothers and babies</p>
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+            <button class="filter-btn" onclick="filterProducts('sleep')">Sleep</button>
+            <button class="filter-btn" onclick="filterProducts('feeding')">Feeding</button>
+            <button class="filter-btn" onclick="filterProducts('technology')">Baby Tech</button>
+            <button class="filter-btn" onclick="filterProducts('organisation')">Organisation</button>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <button class="close-cart" onclick="closeCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">Your cart is empty</div>
+        </div>
+        <div class="cart-total" id="cartTotal">
+            Total: £0.00
+        </div>
+        <button class="checkout-btn" id="checkoutBtn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Mama & Baby Essentials UK. Made with ❤️ for real mothers.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Product data - UK focused products with GBP prices
+        const products = [
+            {
+                id: 1,
+                name: "BT Smart Baby Monitor",
+                description: "HD video monitor with night vision, temperature sensor and UK plug. NHS recommended safety standards.",
+                price: 79.99,
+                category: "technology",
+                icon: "📹"
+            },
+            {
+                id: 2,
+                name: "Grobag Sleep Bag 2.5 TOG",
+                description: "Award-winning baby sleeping bag for 0-12 months. UK safety standard certified, no sleeves design.",
+                price: 32.99,
+                category: "sleep",
+                icon: "🛌"
+            },
+            {
+                id: 3,
+                name: "NHS Feeding & Sleep Tracker",
+                description: "Digital spreadsheet + mobile app for breastfeeding tracking, nappy changes and sleep patterns.",
+                price: 14.99,
+                category: "organisation",
+                icon: "📊"
+            },
+            {
+                id: 4,
+                name: "Ergobaby Omni 360 Carrier",
+                description: "UK's top-rated baby carrier. Suitable from newborn to 20kg, ergonomic hip-safe design.",
+                price: 125.00,
+                category: "organisation",
+                icon: "🎒"
+            },
+            {
+                id: 5,
+                name: "Tommee Tippee Advanced Set",
+                description: "Complete feeding set: 4 anti-colic bottles, electric steriliser and bottle warmer. UK made.",
+                price: 89.99,
+                category: "feeding",
+                icon: "🍼"
+            },
+            {
+                id: 6,
+                name: "Pregnancy & Baby Prep Checklist",
+                description: "Comprehensive NHS-aligned checklist for pregnancy and first months. Printable PDF included.",
+                price: 9.99,
+                category: "organisation",
+                icon: "✅"
+            },
+            {
+                id: 7,
+                name: "Ewan the Dream Sheep",
+                description: "UK's favourite sleep aid. Pink noise and heartbeat sounds with amber night light. Battery operated.",
+                price: 29.99,
+                category: "sleep",
+                icon: "🐑"
+            },
+            {
+                id: 8,
+                name: "Salter Digital Baby Scale",
+                description: "Precise digital scale for baby weight tracking. NHS midwife recommended with memory function.",
+                price: 45.99,
+                category: "technology",
+                icon: "⚖️"
+            },
+            {
+                id: 9,
+                name: "MAM Anti-Colic Bottle Set",
+                description: "Self-sterilising bottles with NHS-approved anti-colic system. BPA free, available at Boots.",
+                price: 24.99,
+                category: "feeding",
+                icon: "🥛"
+            },
+            {
+                id: 10,
+                name: "SnuzCloud Baby Monitor",
+                description: "WiFi enabled monitor with app control. Temperature and humidity monitoring. UK customer support.",
+                price: 149.99,
+                category: "technology",
+                icon: "☁️"
+            }
+        ];
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Initialize the page
+        function init() {
+            renderProducts('all');
+            updateCartCount();
+            updateCheckoutButton();
+        }
+
+        // Render products based on category
+        function renderProducts(category) {
+            const productsGrid = document.getElementById('productsGrid');
+            const filteredProducts = category === 'all' 
+                ? products 
+                : products.filter(product => product.category === category);
+
+            if (filteredProducts.length === 0) {
+                productsGrid.innerHTML = '<div class="empty-cart">No products in this category</div>';
+                return;
+            }
+
+            productsGrid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card">
+                    <div class="product-image">
+                        ${product.icon}
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-price">£${product.price.toFixed(2)}</div>
+                        <button class="add-to-cart" onclick="addToCart(${product.id})" data-product-id="${product.id}">
+                            Add to Basket
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update active filter button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Find and activate the correct button
+            const activeButton = Array.from(document.querySelectorAll('.filter-btn'))
+                .find(btn => {
+                    if (category === 'all') return btn.textContent === 'All Products';
+                    return btn.textContent.toLowerCase().includes(category);
+                });
+            
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+        }
+
+        // Filter products
+        function filterProducts(category) {
+            renderProducts(category);
+        }
+
+        // Add to cart with improved UX
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCheckoutButton();
+            showNotification(`✓ ${product.name} added to basket`);
+            
+            // Provide haptic feedback on mobile
+            if (navigator.vibrate) {
+                navigator.vibrate(50);
+            }
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = totalItems;
+        }
+
+        // Update checkout button state
+        function updateCheckoutButton() {
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            checkoutBtn.disabled = cart.length === 0;
+        }
+
+        // Show cart
+        function showCart() {
+            document.getElementById('cartSidebar').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            renderCartItems();
+        }
+
+        // Close cart
+        function closeCart() {
+            document.getElementById('cartSidebar').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+            document.body.style.overflow = ''; // Restore scroll
+        }
+
+        // Render cart items with improved display
+        function renderCartItems() {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div class="empty-cart">Your basket is empty</div>';
+                cartTotal.textContent = 'Total: £0.00';
+                return;
+            }
+
+            cartItems.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-image">
+                        ${item.icon}
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">£${item.price.toFixed(2)}</div>
+                        <div class="cart-item-quantity">Quantity: ${item.quantity}</div>
+                    </div>
+                    <button class="remove-item" onclick="removeFromCart(${item.id})" title="Remove item">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotal.textContent = `Total: £${total.toFixed(2)}`;
+        }
+
+        // Remove from cart with confirmation
+        function removeFromCart(productId) {
+            const product = cart.find(item => item.id === productId);
+            if (!product) return;
+
+            // Simple confirmation for better UX
+            if (product.quantity > 1) {
+                product.quantity -= 1;
+            } else {
+                cart = cart.filter(item => item.id !== productId);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCheckoutButton();
+            renderCartItems();
+            showNotification(`Item removed from basket`);
+        }
+
+        // Checkout with loading state
+        function checkout() {
+            if (cart.length === 0) {
+                showNotification('Your basket is empty');
+                return;
+            }
+
+            // Simulate loading state
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            const originalText = checkoutBtn.textContent;
+            checkoutBtn.textContent = 'Processing...';
+            checkoutBtn.classList.add('loading');
+
+            setTimeout(() => {
+                showNotification('Thank you for your order! 💝 This is a demo project.');
+                cart = [];
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+                updateCheckoutButton();
+                renderCartItems();
+                closeCart();
+                
+                // Reset button
+                checkoutBtn.textContent = originalText;
+                checkoutBtn.classList.remove('loading');
+            }, 1500);
+        }
+
+        // Show notification with improved styling
+        function showNotification(message) {
+            // Remove existing notifications
+            document.querySelectorAll('.notification').forEach(notif => notif.remove());
+            
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideIn 0.3s ease reverse';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Scroll to products smoothly
+        function scrollToProducts() {
+            document.getElementById('products').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Close cart when pressing Escape key
+        function handleKeyPress(event) {
+            if (event.key === 'Escape') {
+                closeCart();
+            }
+        }
+
+        // Event listeners
+        document.getElementById('cartIcon').addEventListener('click', showCart);
+        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('keydown', handleKeyPress);
+
+        // Prevent body scroll when cart is open
+        document.getElementById('overlay').addEventListener('click', closeCart);
+    </script>
+</body>
+</html>
