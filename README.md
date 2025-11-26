@@ -49,10 +49,9 @@ ecommerce-store/
 ├── index.html
 ├── README.md
 
-text
-
 ---
 
 *Designed with ❤️ for UK mothers*
+
 
 
