@@ -48,11 +48,11 @@ A UK-focused e-commerce website specialising in baby products for 0-3 years, des
 ecommerce-store/
 ├── index.html
 ├── README.md
-└── assets/ (if adding real images)
 
 text
 
 ---
 
 *Designed with ❤️ for UK mothers*
+
 
